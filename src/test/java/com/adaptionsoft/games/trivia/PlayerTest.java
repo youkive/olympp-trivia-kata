@@ -12,4 +12,8 @@ public class PlayerTest {
         Assertions.assertEquals("jim", name);
     }
 
+    @Test
+    void should_start_at_position_0() {
+        Assertions.assertEquals(0, new Player("jim").getPlace());
+    }
 }

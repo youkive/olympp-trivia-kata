@@ -11,4 +11,8 @@ public class Player {
     public String toName() {
         return name;
     }
+
+    public Integer getPlace() {
+        return 0;
+    }
 }
