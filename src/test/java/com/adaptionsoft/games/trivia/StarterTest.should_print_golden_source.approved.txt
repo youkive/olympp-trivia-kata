@@ -1,0 +1,64 @@
+Chet is the current player
+They have rolled a 5
+Chet's new location is 5
+The category is Science
+Pat is the current player
+They have rolled a 5
+Pat's new location is 5
+The category is Science
+Sue is the current player
+They have rolled a 5
+Sue's new location is 5
+The category is Science
+Chet is the current player
+They have rolled a 5
+Chet's new location is 10
+The category is Sports
+Pat is the current player
+They have rolled a 5
+Pat's new location is 10
+The category is Sports
+Sue is the current player
+They have rolled a 5
+Sue's new location is 10
+The category is Sports
+Chet is the current player
+They have rolled a 5
+Chet's new location is 3
+The category is Rock
+Pat is the current player
+They have rolled a 5
+Pat's new location is 3
+The category is Rock
+Sue is the current player
+They have rolled a 5
+Sue's new location is 3
+The category is Rock
+Chet is the current player
+They have rolled a 5
+Chet's new location is 8
+The category is Pop
+Pat is the current player
+They have rolled a 5
+Pat's new location is 8
+The category is Pop
+Sue is the current player
+They have rolled a 5
+Sue's new location is 8
+The category is Pop
+Chet is the current player
+They have rolled a 5
+Chet's new location is 1
+The category is Science
+Pat is the current player
+They have rolled a 5
+Pat's new location is 1
+The category is Science
+Sue is the current player
+They have rolled a 5
+Sue's new location is 1
+The category is Science
+Chet is the current player
+They have rolled a 5
+Chet's new location is 6
+The category is Sports

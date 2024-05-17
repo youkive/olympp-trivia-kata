@@ -1,5 +1,6 @@
 package com.adaptionsoft.games.uglytrivia;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -51,25 +52,25 @@ public class Game {
 		return players.size();
 	}
 
-	public void roll(int roll) {
-		System.out.println(players.get(currentPlayer) + " is the current player");
-		System.out.println("They have rolled a " + roll);
+	public void roll(int roll, PrintStream out) {
+		out.println(players.get(currentPlayer) + " is the current player");
+		out.println("They have rolled a " + roll);
 		
 		if (inPenaltyBox[currentPlayer]) {
 			if (roll % 2 != 0) {
 				isGettingOutOfPenaltyBox = true;
 				
-				System.out.println(players.get(currentPlayer) + " is getting out of the penalty box");
+				out.println(players.get(currentPlayer) + " is getting out of the penalty box");
 				places[currentPlayer] = places[currentPlayer] + roll;
 				if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
 				
-				System.out.println(players.get(currentPlayer) 
+				out.println(players.get(currentPlayer)
 						+ "'s new location is " 
 						+ places[currentPlayer]);
-				System.out.println("The category is " + currentCategory());
+				out.println("The category is " + currentCategory());
 				askQuestion();
 			} else {
-				System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
+				out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
 				isGettingOutOfPenaltyBox = false;
 				}
 			
@@ -78,10 +79,10 @@ public class Game {
 			places[currentPlayer] = places[currentPlayer] + roll;
 			if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
 			
-			System.out.println(players.get(currentPlayer) 
+			out.println(players.get(currentPlayer)
 					+ "'s new location is " 
 					+ places[currentPlayer]);
-			System.out.println("The category is " + currentCategory());
+			out.println("The category is " + currentCategory());
 			askQuestion();
 		}
 		
