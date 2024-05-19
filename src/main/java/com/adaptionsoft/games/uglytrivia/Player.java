@@ -64,16 +64,16 @@ public class Player {
            this.place = this.place - 12;
     }
 
-    public String getCategoryAccordingPlace() {
+    public QuestionType getCategoryAccordingPlace() {
         switch (this.place % 4) {
             case 0:
-                return QuestionType.POP.getLabel();
+                return QuestionType.POP;
             case 1 :
-                return QuestionType.SCIENCE.getLabel();
+                return QuestionType.SCIENCE;
             case 2 :
-                return QuestionType.SPORTS.getLabel();
+                return QuestionType.SPORTS;
             default:
-                return QuestionType.ROCK.getLabel();
+                return QuestionType.ROCK;
         }
     }
 }

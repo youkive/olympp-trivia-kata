@@ -47,18 +47,18 @@ public class Game {
     private void play(int roll, PrintStream out) {
         currentPlayer.move(roll);
         out.println(currentPlayer.toName() +"'s new location is " + currentPlayer.getPlace());
-        out.println("The category is " + currentPlayer.getCategoryAccordingPlace());
+        out.println("The category is " + currentPlayer.getCategoryAccordingPlace().getLabel());
         askQuestion();
     }
 
     private void askQuestion() {
-        if (currentPlayer.getCategoryAccordingPlace() == QuestionType.POP.getLabel())
+        if (currentPlayer.getCategoryAccordingPlace().getLabel() == QuestionType.POP.getLabel())
             System.out.println(questionSet.removeQuestionFor(QuestionType.POP));
-        if (currentPlayer.getCategoryAccordingPlace() == QuestionType.SCIENCE.getLabel())
+        if (currentPlayer.getCategoryAccordingPlace().getLabel() == QuestionType.SCIENCE.getLabel())
             System.out.println(questionSet.removeQuestionFor(QuestionType.SCIENCE));
-        if (currentPlayer.getCategoryAccordingPlace() == QuestionType.SPORTS.getLabel())
+        if (currentPlayer.getCategoryAccordingPlace().getLabel() == QuestionType.SPORTS.getLabel())
             System.out.println(questionSet.removeQuestionFor(QuestionType.SPORTS));
-        if (currentPlayer.getCategoryAccordingPlace() == QuestionType.ROCK.getLabel())
+        if (currentPlayer.getCategoryAccordingPlace().getLabel() == QuestionType.ROCK.getLabel())
             System.out.println(questionSet.removeQuestionFor(QuestionType.ROCK));
     }
 
