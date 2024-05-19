@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Game {
     public static final int NB_QUESTIONS = 50;
     ArrayList<Player> players = new ArrayList<>();
-    private QuestionSet questionSet;
+    private final QuestionSet questionSet;
 
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
