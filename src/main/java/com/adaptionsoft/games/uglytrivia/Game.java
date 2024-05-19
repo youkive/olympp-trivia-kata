@@ -113,10 +113,10 @@ public class Game {
         if (inPenaltyBox[currentPlayer]) {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
-                players.get(currentPlayer).purses++;
+                players.get(currentPlayer).setPurses(players.get(currentPlayer).getPurses()+1);
                 System.out.println(players.get(currentPlayer).toName()
                         + " now has "
-                        +  players.get(currentPlayer).purses
+                        +  players.get(currentPlayer).getPurses()
                         + " Gold Coins.");
 
                 boolean winner = didPlayerWin();
@@ -132,12 +132,11 @@ public class Game {
 
 
         } else {
-
             System.out.println("Answer was corrent!!!!");
-            players.get(currentPlayer).purses++;
+            players.get(currentPlayer).setPurses(players.get(currentPlayer).getPurses()+1);
             System.out.println(players.get(currentPlayer).toName()
                     + " now has "
-                    + players.get(currentPlayer).purses
+                    + players.get(currentPlayer).getPurses()
                     + " Gold Coins.");
 
             boolean winner = didPlayerWin();
@@ -160,6 +159,6 @@ public class Game {
 
 
     private boolean didPlayerWin() {
-        return !(players.get(currentPlayer).purses == 6);
+        return !(players.get(currentPlayer).getPurses() == 6);
     }
 }

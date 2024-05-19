@@ -5,7 +5,7 @@ public class Player {
 
     private Integer place;
 
-    public Integer purses;
+    private Integer purses;
 
     public Player(String name) {
 
@@ -24,5 +24,13 @@ public class Player {
 
     public void setPlace(Integer place) {
         this.place = place;
+    }
+
+    public Integer getPurses() {
+        return purses;
+    }
+
+    public void setPurses(Integer purses) {
+        this.purses = purses;
     }
 }
