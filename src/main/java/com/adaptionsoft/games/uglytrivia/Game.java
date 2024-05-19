@@ -3,12 +3,13 @@ package com.adaptionsoft.games.uglytrivia;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Game {
     public static final int NB_QUESTIONS = 50;
     ArrayList<Player> players = new ArrayList<>();
 
-    LinkedList popQuestions = new LinkedList();
+    List<Question> popQuestions = new ArrayList<>();
     LinkedList scienceQuestions = new LinkedList();
     LinkedList sportsQuestions = new LinkedList();
     LinkedList rockQuestions = new LinkedList();
@@ -18,7 +19,7 @@ public class Game {
 
     public Game() {
         for (int i = 0; i < NB_QUESTIONS; i++) {
-            popQuestions.addLast("Pop Question " + i);
+            popQuestions.add(new Question("Pop Question " + i));
             scienceQuestions.addLast(("Science Question " + i));
             sportsQuestions.addLast(("Sports Question " + i));
             rockQuestions.addLast("Rock Question " + i);
@@ -73,7 +74,7 @@ public class Game {
 
     private void askQuestion() {
         if (currentCategory() == "Pop")
-            System.out.println(popQuestions.removeFirst());
+            System.out.println(popQuestions.remove(0));
         if (currentCategory() == "Science")
             System.out.println(scienceQuestions.removeFirst());
         if (currentCategory() == "Sports")
