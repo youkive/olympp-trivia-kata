@@ -7,7 +7,7 @@ public class Player {
 
     private Integer purses;
 
-    public Boolean inPenaltyBox;
+    private Boolean inPenaltyBox;
 
     public Player(String name) {
         this.name = name;
@@ -34,5 +34,13 @@ public class Player {
 
     public void setPurses(Integer purses) {
         this.purses = purses;
+    }
+
+    public Boolean isInPenaltyBox() {
+        return inPenaltyBox;
+    }
+
+    public void setInPenaltyBox(Boolean inPenaltyBox) {
+        this.inPenaltyBox = inPenaltyBox;
     }
 }
