@@ -47,34 +47,21 @@ public class Game {
     private void play(int roll, PrintStream out) {
         currentPlayer.move(roll);
         out.println(currentPlayer.toName() +"'s new location is " + currentPlayer.getPlace());
-        out.println("The category is " + currentCategory());
+        out.println("The category is " + currentPlayer.getCategoryAccordingPlace());
         askQuestion();
     }
 
     private void askQuestion() {
-        if (currentCategory() == QuestionType.POP.getLabel())
+        if (currentPlayer.getCategoryAccordingPlace() == QuestionType.POP.getLabel())
             System.out.println(questionSet.removeQuestionFor(QuestionType.POP));
-        if (currentCategory() == QuestionType.SCIENCE.getLabel())
+        if (currentPlayer.getCategoryAccordingPlace() == QuestionType.SCIENCE.getLabel())
             System.out.println(questionSet.removeQuestionFor(QuestionType.SCIENCE));
-        if (currentCategory() == QuestionType.SPORTS.getLabel())
+        if (currentPlayer.getCategoryAccordingPlace() == QuestionType.SPORTS.getLabel())
             System.out.println(questionSet.removeQuestionFor(QuestionType.SPORTS));
-        if (currentCategory() == QuestionType.ROCK.getLabel())
+        if (currentPlayer.getCategoryAccordingPlace() == QuestionType.ROCK.getLabel())
             System.out.println(questionSet.removeQuestionFor(QuestionType.ROCK));
     }
 
-
-    private String currentCategory() {
-        if (currentPlayer.getPlace() == 0) return QuestionType.POP.getLabel();
-        if (currentPlayer.getPlace() == 4) return QuestionType.POP.getLabel();
-        if (currentPlayer.getPlace() == 8) return QuestionType.POP.getLabel();
-        if (currentPlayer.getPlace() == 1) return QuestionType.SCIENCE.getLabel();
-        if (currentPlayer.getPlace() == 5) return QuestionType.SCIENCE.getLabel();
-        if (currentPlayer.getPlace() == 9) return QuestionType.SCIENCE.getLabel();
-        if (currentPlayer.getPlace() == 2) return QuestionType.SPORTS.getLabel();
-        if (currentPlayer.getPlace() == 6) return QuestionType.SPORTS.getLabel();
-        if (currentPlayer.getPlace() == 10) return QuestionType.SPORTS.getLabel();
-        return QuestionType.ROCK.getLabel();
-    }
 
     public boolean wasCorrectlyAnswered() {
         if (currentPlayer.isInPenaltyBox()) {

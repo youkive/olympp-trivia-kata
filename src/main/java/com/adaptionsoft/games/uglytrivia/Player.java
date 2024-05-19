@@ -63,4 +63,17 @@ public class Player {
         if (this.place > 11)
            this.place = this.place - 12;
     }
+
+    public String getCategoryAccordingPlace() {
+        switch (this.place % 4) {
+            case 0:
+                return QuestionType.POP.getLabel();
+            case 1 :
+                return QuestionType.SCIENCE.getLabel();
+            case 2 :
+                return QuestionType.SPORTS.getLabel();
+            default:
+                return QuestionType.ROCK.getLabel();
+        }
+    }
 }
