@@ -48,18 +48,8 @@ public class Game {
         currentPlayer.move(roll);
         out.println(currentPlayer.toName() +"'s new location is " + currentPlayer.getPlace());
         out.println("The category is " + currentPlayer.getCategoryAccordingPlace().getLabel());
-        askQuestion();
-    }
-
-    private void askQuestion() {
-        if (currentPlayer.getCategoryAccordingPlace().getLabel() == QuestionType.POP.getLabel())
-            System.out.println(questionSet.removeQuestionFor(QuestionType.POP));
-        if (currentPlayer.getCategoryAccordingPlace().getLabel() == QuestionType.SCIENCE.getLabel())
-            System.out.println(questionSet.removeQuestionFor(QuestionType.SCIENCE));
-        if (currentPlayer.getCategoryAccordingPlace().getLabel() == QuestionType.SPORTS.getLabel())
-            System.out.println(questionSet.removeQuestionFor(QuestionType.SPORTS));
-        if (currentPlayer.getCategoryAccordingPlace().getLabel() == QuestionType.ROCK.getLabel())
-            System.out.println(questionSet.removeQuestionFor(QuestionType.ROCK));
+        Question questionRemoved = questionSet.removeQuestionFor(currentPlayer.getCategoryAccordingPlace());
+        System.out.println(questionRemoved);
     }
 
 
