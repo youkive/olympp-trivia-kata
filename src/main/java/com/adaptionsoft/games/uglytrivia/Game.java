@@ -73,13 +73,13 @@ public class Game {
     }
 
     private void askQuestion() {
-        if (currentCategory() == "Pop")
+        if (currentCategory() == QuestionType.POP.getLabel())
             System.out.println(popQuestions.remove(0));
-        if (currentCategory() == "Science")
+        if (currentCategory() == QuestionType.SCIENCE.getLabel())
             System.out.println(scienceQuestions.remove(0));
-        if (currentCategory() == "Sports")
+        if (currentCategory() == QuestionType.SPORTS.getLabel())
             System.out.println(sportsQuestions.remove(0));
-        if (currentCategory() == "Rock")
+        if (currentCategory() == QuestionType.ROCK.getLabel())
             System.out.println(rockQuestions.remove(0));
     }
 
