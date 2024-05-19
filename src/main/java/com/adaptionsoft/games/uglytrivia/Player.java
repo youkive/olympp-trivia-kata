@@ -3,7 +3,7 @@ package com.adaptionsoft.games.uglytrivia;
 public class Player {
     public String name;
 
-    public Integer place;
+    private Integer place;
 
     public Player(String name) {
 
@@ -17,5 +17,9 @@ public class Player {
 
     public Integer getPlace() {
         return place;
+    }
+
+    public void setPlace(Integer place) {
+        this.place = place;
     }
 }

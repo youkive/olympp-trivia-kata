@@ -61,13 +61,13 @@ public class Game {
                 isGettingOutOfPenaltyBox = true;
 
                 out.println(players.get(currentPlayer).toName() + " is getting out of the penalty box");
-                players.get(currentPlayer).place = players.get(currentPlayer).place + roll;
-                if (players.get(currentPlayer).place > 11)
-                    players.get(currentPlayer).place = players.get(currentPlayer).place - 12;
+                players.get(currentPlayer).setPlace(players.get(currentPlayer).getPlace() + roll);
+                if (players.get(currentPlayer).getPlace() > 11)
+                    players.get(currentPlayer).setPlace(players.get(currentPlayer).getPlace() - 12);
 
                 out.println(players.get(currentPlayer)
                         + "'s new location is "
-                        + players.get(currentPlayer).place);
+                        + players.get(currentPlayer).getPlace());
                 out.println("The category is " + currentCategory());
                 askQuestion();
             } else {
@@ -77,12 +77,13 @@ public class Game {
 
         } else {
 
-            players.get(currentPlayer).place = players.get(currentPlayer).place+ roll;
-            if (players.get(currentPlayer).place > 11) players.get(currentPlayer).place = players.get(currentPlayer).place - 12;
+            players.get(currentPlayer).setPlace(players.get(currentPlayer).getPlace()+ roll);
+            if (players.get(currentPlayer).getPlace() > 11)
+                players.get(currentPlayer).setPlace(players.get(currentPlayer).getPlace() - 12);
 
             out.println(players.get(currentPlayer).toName()
                     + "'s new location is "
-                    + players.get(currentPlayer).place);
+                    + players.get(currentPlayer).getPlace());
             out.println("The category is " + currentCategory());
             askQuestion();
         }
@@ -102,15 +103,15 @@ public class Game {
 
 
     private String currentCategory() {
-        if (players.get(currentPlayer).place == 0) return "Pop";
-        if (players.get(currentPlayer).place == 4) return "Pop";
-        if (players.get(currentPlayer).place == 8) return "Pop";
-        if (players.get(currentPlayer).place == 1) return "Science";
-        if (players.get(currentPlayer).place == 5) return "Science";
-        if (players.get(currentPlayer).place == 9) return "Science";
-        if (players.get(currentPlayer).place == 2) return "Sports";
-        if (players.get(currentPlayer).place == 6) return "Sports";
-        if (players.get(currentPlayer).place == 10) return "Sports";
+        if (players.get(currentPlayer).getPlace() == 0) return "Pop";
+        if (players.get(currentPlayer).getPlace() == 4) return "Pop";
+        if (players.get(currentPlayer).getPlace() == 8) return "Pop";
+        if (players.get(currentPlayer).getPlace() == 1) return "Science";
+        if (players.get(currentPlayer).getPlace() == 5) return "Science";
+        if (players.get(currentPlayer).getPlace() == 9) return "Science";
+        if (players.get(currentPlayer).getPlace() == 2) return "Sports";
+        if (players.get(currentPlayer).getPlace() == 6) return "Sports";
+        if (players.get(currentPlayer).getPlace() == 10) return "Sports";
         return "Rock";
     }
 
