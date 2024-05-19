@@ -57,4 +57,10 @@ public class Player {
     public void setGettingOutOfPenaltyBox(Boolean gettingOutOfPenaltyBox) {
         isGettingOutOfPenaltyBox = gettingOutOfPenaltyBox;
     }
+
+    void move(int roll) {
+        this.place = place + roll;
+        if (this.place > 11)
+           this.place = this.place - 12;
+    }
 }

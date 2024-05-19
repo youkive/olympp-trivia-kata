@@ -33,9 +33,7 @@ public class Game {
                 currentPlayer.setGettingOutOfPenaltyBox(true);
 
                 out.println(currentPlayer.toName() + " is getting out of the penalty box");
-                currentPlayer.setPlace(currentPlayer.getPlace() + roll);
-                if (currentPlayer.getPlace() > 11)
-                    currentPlayer.setPlace(currentPlayer.getPlace() - 12);
+                currentPlayer.move(roll);
 
                 out.println(currentPlayer
                         + "'s new location is "
@@ -48,9 +46,7 @@ public class Game {
             }
 
         } else {
-            currentPlayer.setPlace(currentPlayer.getPlace() + roll);
-            if (currentPlayer.getPlace() > 11)
-                currentPlayer.setPlace(currentPlayer.getPlace() - 12);
+            currentPlayer.move(roll);
 
             out.println(currentPlayer.toName()
                     + "'s new location is "
