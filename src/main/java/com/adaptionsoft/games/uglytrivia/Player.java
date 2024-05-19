@@ -9,7 +9,7 @@ public class Player {
 
     private Boolean inPenaltyBox;
 
-    public Boolean isGettingOutOfPenaltyBox;
+    private Boolean isGettingOutOfPenaltyBox;
 
     public Player(String name) {
         this.name = name;
@@ -48,5 +48,13 @@ public class Player {
 
     boolean isWinner() {
         return !(getPurses() == 6);
+    }
+
+    public Boolean getGettingOutOfPenaltyBox() {
+        return isGettingOutOfPenaltyBox;
+    }
+
+    public void setGettingOutOfPenaltyBox(Boolean gettingOutOfPenaltyBox) {
+        isGettingOutOfPenaltyBox = gettingOutOfPenaltyBox;
     }
 }

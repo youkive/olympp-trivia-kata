@@ -30,7 +30,7 @@ public class Game {
 
         if (currentPlayer.isInPenaltyBox()) {
             if (roll % 2 != 0) {
-                currentPlayer.isGettingOutOfPenaltyBox = true;
+                currentPlayer.setGettingOutOfPenaltyBox(true);
 
                 out.println(currentPlayer.toName() + " is getting out of the penalty box");
                 currentPlayer.setPlace(currentPlayer.getPlace() + roll);
@@ -44,7 +44,7 @@ public class Game {
                 askQuestion();
             } else {
                 out.println(currentPlayer.toName() + " is not getting out of the penalty box");
-                currentPlayer.isGettingOutOfPenaltyBox = false;
+                currentPlayer.setGettingOutOfPenaltyBox(false);
             }
 
         } else {
@@ -88,7 +88,7 @@ public class Game {
 
     public boolean wasCorrectlyAnswered() {
         if (currentPlayer.isInPenaltyBox()) {
-            if (currentPlayer.isGettingOutOfPenaltyBox) {
+            if (currentPlayer.getGettingOutOfPenaltyBox()) {
                 System.out.println("Answer was correct!!!!");
                 currentPlayer.setPurses(currentPlayer.getPurses() + 1);
                 System.out.println(currentPlayer.toName()
