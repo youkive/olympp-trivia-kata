@@ -2,27 +2,28 @@ package com.adaptionsoft.games.uglytrivia;
 
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Game {
     public static final int NB_QUESTIONS = 50;
     ArrayList<Player> players = new ArrayList<>();
-
-    List<Question> popQuestions = new ArrayList<>();
-    List<Question> scienceQuestions = new ArrayList();
-    List<Question> sportsQuestions = new ArrayList();
-    List<Question> rockQuestions = new ArrayList();
+    Map<QuestionType, List<Question>> questionsSet = new HashMap<>();
 
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
 
     public Game() {
+        questionsSet.put(QuestionType.POP, new ArrayList<>());
+        questionsSet.put(QuestionType.SCIENCE, new ArrayList<>());
+        questionsSet.put(QuestionType.SPORTS, new ArrayList<>());
+        questionsSet.put(QuestionType.ROCK, new ArrayList<>());
         for (int i = 0; i < NB_QUESTIONS; i++) {
-            popQuestions.add(new Question("Pop Question " + i));
-            scienceQuestions.add(new Question("Science Question " + i));
-            sportsQuestions.add(new Question("Sports Question " + i));
-            rockQuestions.add(new Question("Rock Question " + i));
+            questionsSet.get(QuestionType.POP).add(new Question("Pop Question " + i));
+            questionsSet.get(QuestionType.SCIENCE).add(new Question("Science Question " + i));
+            questionsSet.get(QuestionType.SPORTS).add(new Question("Sports Question " + i));
+            questionsSet.get(QuestionType.ROCK).add(new Question("Rock Question " + i));
         }
     }
 
@@ -74,13 +75,13 @@ public class Game {
 
     private void askQuestion() {
         if (currentCategory() == QuestionType.POP.getLabel())
-            System.out.println(popQuestions.remove(0));
+            System.out.println(questionsSet.get(QuestionType.POP).remove(0));
         if (currentCategory() == QuestionType.SCIENCE.getLabel())
-            System.out.println(scienceQuestions.remove(0));
+            System.out.println(questionsSet.get(QuestionType.SCIENCE).remove(0));
         if (currentCategory() == QuestionType.SPORTS.getLabel())
-            System.out.println(sportsQuestions.remove(0));
+            System.out.println(questionsSet.get(QuestionType.SPORTS).remove(0));
         if (currentCategory() == QuestionType.ROCK.getLabel())
-            System.out.println(rockQuestions.remove(0));
+            System.out.println(questionsSet.get(QuestionType.ROCK).remove(0));
     }
 
 
