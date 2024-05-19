@@ -9,6 +9,8 @@ public class Player {
 
     private Boolean inPenaltyBox;
 
+    public Boolean isGettingOutOfPenaltyBox;
+
     public Player(String name) {
         this.name = name;
         this.place=0;

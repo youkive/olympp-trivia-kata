@@ -9,7 +9,6 @@ public class Game {
     private final QuestionSet questionSet;
 
     Player currentPlayer;
-    boolean isGettingOutOfPenaltyBox;
 
     public Game() {
         questionSet = new QuestionSet(NB_QUESTIONS);
@@ -31,7 +30,7 @@ public class Game {
 
         if (currentPlayer.isInPenaltyBox()) {
             if (roll % 2 != 0) {
-                isGettingOutOfPenaltyBox = true;
+                currentPlayer.isGettingOutOfPenaltyBox = true;
 
                 out.println(currentPlayer.toName() + " is getting out of the penalty box");
                 currentPlayer.setPlace(currentPlayer.getPlace() + roll);
@@ -45,7 +44,7 @@ public class Game {
                 askQuestion();
             } else {
                 out.println(currentPlayer.toName() + " is not getting out of the penalty box");
-                isGettingOutOfPenaltyBox = false;
+                currentPlayer.isGettingOutOfPenaltyBox = false;
             }
 
         } else {
@@ -89,7 +88,7 @@ public class Game {
 
     public boolean wasCorrectlyAnswered() {
         if (currentPlayer.isInPenaltyBox()) {
-            if (isGettingOutOfPenaltyBox) {
+            if (currentPlayer.isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
                 currentPlayer.setPurses(currentPlayer.getPurses() + 1);
                 System.out.println(currentPlayer.toName()
