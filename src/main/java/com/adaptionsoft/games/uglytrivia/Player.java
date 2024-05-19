@@ -43,4 +43,8 @@ public class Player {
     public void setInPenaltyBox(Boolean inPenaltyBox) {
         this.inPenaltyBox = inPenaltyBox;
     }
+
+    boolean isWinner() {
+        return !(getPurses() == 6);
+    }
 }
