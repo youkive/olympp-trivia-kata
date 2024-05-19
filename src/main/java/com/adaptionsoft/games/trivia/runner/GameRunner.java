@@ -20,9 +20,9 @@ public class GameRunner {
 	public static void run(PrintStream out, int randInt, int secondRandom) {
 		Game aGame = new Game();
 
-		aGame.add("Chet");
-		aGame.add("Pat");
-		aGame.add("Sue");
+		aGame.addNewPlayer("Chet");
+		aGame.addNewPlayer("Pat");
+		aGame.addNewPlayer("Sue");
 
 		do {
 
