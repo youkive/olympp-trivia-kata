@@ -6,8 +6,6 @@ import java.util.LinkedList;
 
 public class Game {
     ArrayList<Player> players = new ArrayList<>();
-    //boolean[] inPenaltyBox = new boolean[6];
-
     LinkedList popQuestions = new LinkedList();
     LinkedList scienceQuestions = new LinkedList();
     LinkedList sportsQuestions = new LinkedList();
@@ -30,18 +28,11 @@ public class Game {
     }
 
     public boolean add(String playerName) {
-
-
         players.add(new Player(playerName));
-        //inPenaltyBox[howManyPlayers()] = false;
 
         System.out.println(playerName + " was added");
         System.out.println("They are player number " + players.size());
         return true;
-    }
-
-    public int howManyPlayers() {
-        return players.size();
     }
 
     public void roll(int roll, PrintStream out) {
