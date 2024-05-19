@@ -23,4 +23,8 @@ public class QuestionSet {
             questionsSet.get(QuestionType.ROCK).add(new Question("Rock Question " + i));
         }
     }
+
+    Question removeQuestionFor(QuestionType pop) {
+        return questionsSet.get(pop).remove(0);
+    }
 }

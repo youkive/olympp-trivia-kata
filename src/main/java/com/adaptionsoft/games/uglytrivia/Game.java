@@ -63,13 +63,13 @@ public class Game {
 
     private void askQuestion() {
         if (currentCategory() == QuestionType.POP.getLabel())
-            System.out.println(questionSet.questionsSet.get(QuestionType.POP).remove(0));
+            System.out.println(questionSet.removeQuestionFor(QuestionType.POP));
         if (currentCategory() == QuestionType.SCIENCE.getLabel())
-            System.out.println(questionSet.questionsSet.get(QuestionType.SCIENCE).remove(0));
+            System.out.println(questionSet.removeQuestionFor(QuestionType.SCIENCE));
         if (currentCategory() == QuestionType.SPORTS.getLabel())
-            System.out.println(questionSet.questionsSet.get(QuestionType.SPORTS).remove(0));
+            System.out.println(questionSet.removeQuestionFor(QuestionType.SPORTS));
         if (currentCategory() == QuestionType.ROCK.getLabel())
-            System.out.println(questionSet.questionsSet.get(QuestionType.ROCK).remove(0));
+            System.out.println(questionSet.removeQuestionFor(QuestionType.ROCK));
     }
 
 
