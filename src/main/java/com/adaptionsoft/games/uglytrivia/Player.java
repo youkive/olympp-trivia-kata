@@ -7,11 +7,13 @@ public class Player {
 
     private Integer purses;
 
-    public Player(String name) {
+    public Boolean inPenaltyBox;
 
+    public Player(String name) {
         this.name = name;
         this.place=0;
         this.purses = 0;
+        this.inPenaltyBox = false;
     }
 
     public String toName() {

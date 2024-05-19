@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class Game {
     ArrayList<Player> players = new ArrayList<>();
-    boolean[] inPenaltyBox = new boolean[6];
+    //boolean[] inPenaltyBox = new boolean[6];
 
     LinkedList popQuestions = new LinkedList();
     LinkedList scienceQuestions = new LinkedList();
@@ -33,7 +33,7 @@ public class Game {
 
 
         players.add(new Player(playerName));
-        inPenaltyBox[howManyPlayers()] = false;
+        //inPenaltyBox[howManyPlayers()] = false;
 
         System.out.println(playerName + " was added");
         System.out.println("They are player number " + players.size());
@@ -48,7 +48,7 @@ public class Game {
         out.println(players.get(currentPlayer).toName() + " is the current player");
         out.println("They have rolled a " + roll);
 
-        if (inPenaltyBox[currentPlayer]) {
+        if (players.get(currentPlayer).inPenaltyBox) {
             if (roll % 2 != 0) {
                 isGettingOutOfPenaltyBox = true;
 
@@ -108,7 +108,7 @@ public class Game {
     }
 
     public boolean wasCorrectlyAnswered() {
-        if (inPenaltyBox[currentPlayer]) {
+        if (players.get(currentPlayer).inPenaltyBox) {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
                 players.get(currentPlayer).setPurses(players.get(currentPlayer).getPurses() + 1);
@@ -151,7 +151,7 @@ public class Game {
     public boolean wrongAnswer() {
         System.out.println("Question was incorrectly answered");
         System.out.println(players.get(currentPlayer).toName() + " was sent to the penalty box");
-        inPenaltyBox[currentPlayer] = true;
+        players.get(currentPlayer).inPenaltyBox = true;
 
         currentPlayer++;
         if (currentPlayer == players.size()) currentPlayer = 0;
