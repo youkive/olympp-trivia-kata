@@ -85,16 +85,16 @@ public class Game {
 
 
     private String currentCategory() {
-        if (players.get(currentPlayer).getPlace() == 0) return "Pop";
-        if (players.get(currentPlayer).getPlace() == 4) return "Pop";
-        if (players.get(currentPlayer).getPlace() == 8) return "Pop";
-        if (players.get(currentPlayer).getPlace() == 1) return "Science";
-        if (players.get(currentPlayer).getPlace() == 5) return "Science";
-        if (players.get(currentPlayer).getPlace() == 9) return "Science";
-        if (players.get(currentPlayer).getPlace() == 2) return "Sports";
-        if (players.get(currentPlayer).getPlace() == 6) return "Sports";
-        if (players.get(currentPlayer).getPlace() == 10) return "Sports";
-        return "Rock";
+        if (players.get(currentPlayer).getPlace() == 0) return QuestionType.POP.getLabel();
+        if (players.get(currentPlayer).getPlace() == 4) return QuestionType.POP.getLabel();
+        if (players.get(currentPlayer).getPlace() == 8) return QuestionType.POP.getLabel();
+        if (players.get(currentPlayer).getPlace() == 1) return QuestionType.SCIENCE.getLabel();
+        if (players.get(currentPlayer).getPlace() == 5) return QuestionType.SCIENCE.getLabel();
+        if (players.get(currentPlayer).getPlace() == 9) return QuestionType.SCIENCE.getLabel();
+        if (players.get(currentPlayer).getPlace() == 2) return QuestionType.SPORTS.getLabel();
+        if (players.get(currentPlayer).getPlace() == 6) return QuestionType.SPORTS.getLabel();
+        if (players.get(currentPlayer).getPlace() == 10) return QuestionType.SPORTS.getLabel();
+        return QuestionType.ROCK.getLabel();
     }
 
     public boolean wasCorrectlyAnswered() {
