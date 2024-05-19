@@ -6,7 +6,6 @@ import java.util.LinkedList;
 
 public class Game {
     ArrayList<Player> players = new ArrayList<>();
-    //int[] purses = new int[6];
     boolean[] inPenaltyBox = new boolean[6];
 
     LinkedList popQuestions = new LinkedList();
@@ -34,7 +33,6 @@ public class Game {
 
 
         players.add(new Player(playerName));
-        //purses[howManyPlayers()] = 0;
         inPenaltyBox[howManyPlayers()] = false;
 
         System.out.println(playerName + " was added");
@@ -71,7 +69,7 @@ public class Game {
 
         } else {
 
-            players.get(currentPlayer).setPlace(players.get(currentPlayer).getPlace()+ roll);
+            players.get(currentPlayer).setPlace(players.get(currentPlayer).getPlace() + roll);
             if (players.get(currentPlayer).getPlace() > 11)
                 players.get(currentPlayer).setPlace(players.get(currentPlayer).getPlace() - 12);
 
@@ -113,27 +111,29 @@ public class Game {
         if (inPenaltyBox[currentPlayer]) {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
-                players.get(currentPlayer).setPurses(players.get(currentPlayer).getPurses()+1);
+                players.get(currentPlayer).setPurses(players.get(currentPlayer).getPurses() + 1);
                 System.out.println(players.get(currentPlayer).toName()
                         + " now has "
-                        +  players.get(currentPlayer).getPurses()
+                        + players.get(currentPlayer).getPurses()
                         + " Gold Coins.");
 
                 boolean winner = didPlayerWin();
                 currentPlayer++;
-                if (currentPlayer == players.size()) currentPlayer = 0;
+                if (currentPlayer == players.size())
+                    currentPlayer = 0;
 
                 return winner;
             } else {
                 currentPlayer++;
-                if (currentPlayer == players.size()) currentPlayer = 0;
+                if (currentPlayer == players.size())
+                    currentPlayer = 0;
                 return true;
             }
 
 
         } else {
             System.out.println("Answer was corrent!!!!");
-            players.get(currentPlayer).setPurses(players.get(currentPlayer).getPurses()+1);
+            players.get(currentPlayer).setPurses(players.get(currentPlayer).getPurses() + 1);
             System.out.println(players.get(currentPlayer).toName()
                     + " now has "
                     + players.get(currentPlayer).getPurses()
@@ -141,7 +141,8 @@ public class Game {
 
             boolean winner = didPlayerWin();
             currentPlayer++;
-            if (currentPlayer == players.size()) currentPlayer = 0;
+            if (currentPlayer == players.size())
+                currentPlayer = 0;
 
             return winner;
         }
